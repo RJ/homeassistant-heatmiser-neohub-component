@@ -1,0 +1,13 @@
+{
+  "domain": "heatmiser_neohub",
+  "name": "Heatmiser Neohub",
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/components/heatmiser_neohub",
+  "requirements": [
+      "getmac==0.8.1"
+  ],
+  "dependencies": [],
+  "codeowners": [
+    "@RJ"
+  ]
+}
