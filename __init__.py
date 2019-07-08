@@ -46,19 +46,6 @@ async def async_setup(hass, config):
 
     host = config[DOMAIN].get(CONF_HOST)
 
-    # Monkey patch hass to get detected.
-    # Copied from: https://github.com/elupus/hass_nibe/blob/7d72109a86396652cc59e9e25414ff95d2b711d6/__init__.py#L135
-    # (this is not needed if component merged into main hass tree)
-    try:
-        from homeassistant import config_entries
-        config_entries.FLOWS.append(DOMAIN)
-    except AttributeError:
-        try:
-            from homeassistant.generated import config_flows
-            config_flows.FLOWS.append(DOMAIN)
-        except AttributeError:
-            _LOGGER.warning("Unable to extend config flow list.")
-
     if not host:
         hass.async_create_task(
             hass.config_entries.flow.async_init(

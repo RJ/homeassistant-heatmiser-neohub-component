@@ -1,8 +1,13 @@
 # Heatmiser Neohub for Home Assistant
 
-This works in the `custom_components` dir for now.
-I'm using a hack to monkey patch hass to support config flows from custom components.
-However this has been disabled recently. Considering submitting upstream.
+This works in the `custom_components` dir with config_flows if you use the
+[custom_flow branch of home-assistant, by elupus](https://github.com/elupus/home-assistant/commits/custom_flow)
+
+Will also work fine in the components dir of hass tree.
+
+## Not climate 1.0 ready yet
+
+Planning to update for climate 1.0  API before considering submitting.
 
 
 ## Usage
@@ -12,6 +17,11 @@ There isn't a reliable way to uniquely identify the hub otherwise.
 
 
 * Clone into hass configdir/custom\_components/heatmiser\_neohub
+* Restart hass
+* Add integration - will be listed if using custom_flow branch as above.
+
+
+Without config flows:
 * Add to `configuration.yaml`
 ```yaml
 heatmiser_neohub:
